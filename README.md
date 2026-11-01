@@ -58,5 +58,5 @@ $body = @{ knowledgeId = 2091000000000000100; question = 'AX-200 出现 E17 后�
 Invoke-RestMethod -Uri 'http://127.0.0.1:6039/system/aftersales/ask' -Method Post -Headers $headers -ContentType 'application/json' -Body $body
 ```
 
-没有 API Key 时，MySQL、Redis、Weaviate 等依赖仍可启动；真实 Embedding 装载和模型回答需要对应的 API Key。`scripts/seed_aftersales_knowledge.py` 直接装载演示语料，不经过 MinIO 上传与异步解析；后两项尚未完成本次端到端实测。
+没有 API Key 时，MySQL、Redis、Weaviate 等依赖仍可启动；真实 Embedding 装载和模型回答需要对应的 API Key。`scripts/seed_aftersales_knowledge.py` 直接装载演示语料，不经过 MinIO 上传与异步解析
 
