@@ -1,0 +1,4 @@
+{"query":"AX-200 出现 E17 后怎么办","expectedSourceNames":["AX-200-故障排查SOP.md"]}
+{"query":"AX-200 滤芯多久检查一次","expectedSourceNames":["AX-200-用户手册.md"]}
+{"query":"上次 DEMO-AX200-001 的 E17 是怎么处理的","expectedSourceNames":["AX-200-服务记录.md"]}
+{"query":"AX-200 的 E42 故障怎么修","expectedSourceNames":[]}

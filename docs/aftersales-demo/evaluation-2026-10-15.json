@@ -1,0 +1,585 @@
+{
+  "environment": {
+    "date": "2026-10-15",
+    "os": "Windows-10-10.0.26200-SP0",
+    "corpusDocuments": 3,
+    "fragments": 3,
+    "embeddingModel": "qwen3-vl-embedding",
+    "embeddingDimensions": 1024,
+    "vectorStore": "Weaviate 1.30",
+    "sample": "synthetic AX-200 knowledge; 30 manually labelled questions"
+  },
+  "vectorCold": {
+    "requests": 30,
+    "success": 30,
+    "failures": 0,
+    "recallAt1": 1.0,
+    "p50Ms": 205.05,
+    "p95Ms": 291.19,
+    "details": [
+      {
+        "query": "AX-200 故障排查 SOP 中 E17 的处理顺序是什么",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 822.44
+      },
+      {
+        "query": "AX-200 的 E17 告警出现后第一步要做什么",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 209.65
+      },
+      {
+        "query": "E17 排气温度过高时是否要先切断电源",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 198.48
+      },
+      {
+        "query": "E17 故障排查需要记录哪个温度读数",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 291.19
+      },
+      {
+        "query": "AX-200 E17 再次出现时 SOP 要求怎样升级处理",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 212.61
+      },
+      {
+        "query": "故障排查 SOP 规定 E17 处理时谁可以进行现场复核",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 183.95
+      },
+      {
+        "query": "故障排查 SOP 是否直接要求更换 AX-200 内部部件",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 205.05
+      },
+      {
+        "query": "E17 排查时为何需要检查设备周围散热空间",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 183.05
+      },
+      {
+        "query": "AX-200 未收录告警码按 SOP 要记录哪些信息",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 183.84
+      },
+      {
+        "query": "未知告警码能否由现场人员推断维修步骤",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 203.52
+      },
+      {
+        "query": "AX-200 用户手册规定开机前检查什么",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 187.81
+      },
+      {
+        "query": "AX-200 用户手册的日常巡检要求观察哪些读数",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 213.68
+      },
+      {
+        "query": "AX-200 运行时有异常声音应如何处理",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 195.65
+      },
+      {
+        "query": "AX-200 运行时闻到异常气味应联系谁",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 209.52
+      },
+      {
+        "query": "AX-200 进气滤芯的检查周期是多少运行小时",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 222.46
+      },
+      {
+        "query": "用户手册说滤芯明显积尘时应如何处理",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 204.09
+      },
+      {
+        "query": "AX-200 滤芯维护要记录哪些设备信息",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 211.65
+      },
+      {
+        "query": "AX-200 设备运行时能拆卸进气滤芯吗",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 205.19
+      },
+      {
+        "query": "未断电状态能否拆 AX-200 滤芯",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 182.14
+      },
+      {
+        "query": "AX-200 用户手册是否适用于其他型号",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 227.01
+      },
+      {
+        "query": "DEMO-AX200-001 历史服务记录发生在什么日期",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 203.76
+      },
+      {
+        "query": "编号 DEMO-AX200-001 的设备上次 E17 怎么处理的",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 250.76
+      },
+      {
+        "query": "2026 年 9 月 18 日 E17 服务记录的报修现象是什么",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 189.51
+      },
+      {
+        "query": "DEMO-AX200-001 的右侧散热空间被什么遮挡",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 251.19
+      },
+      {
+        "query": "历史维修记录中清理堆放物后谁做复核",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 236.96
+      },
+      {
+        "query": "服务记录里的试运行是否再次出现 E17",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 206.86
+      },
+      {
+        "query": "DEMO-AX200-001 此次维修有没有更换内部部件",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 211.73
+      },
+      {
+        "query": "历史服务记录对应的设备编号是什么",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 193.33
+      },
+      {
+        "query": "这份 E17 历史服务记录能直接作为所有设备维修规则吗",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 185.93
+      },
+      {
+        "query": "服务记录描述的现场遮挡物清理后发生了什么",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 186.22
+      }
+    ]
+  },
+  "hybridColdAlpha03": {
+    "requests": 30,
+    "success": 30,
+    "failures": 0,
+    "recallAt1": 1.0,
+    "p50Ms": 188.81,
+    "p95Ms": 242.6,
+    "details": [
+      {
+        "query": "AX-200 故障排查 SOP 中 E17 的处理顺序是什么",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 179.16
+      },
+      {
+        "query": "AX-200 的 E17 告警出现后第一步要做什么",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 191.23
+      },
+      {
+        "query": "E17 排气温度过高时是否要先切断电源",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 188.79
+      },
+      {
+        "query": "E17 故障排查需要记录哪个温度读数",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 242.6
+      },
+      {
+        "query": "AX-200 E17 再次出现时 SOP 要求怎样升级处理",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 198.73
+      },
+      {
+        "query": "故障排查 SOP 规定 E17 处理时谁可以进行现场复核",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 201.05
+      },
+      {
+        "query": "故障排查 SOP 是否直接要求更换 AX-200 内部部件",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 211.14
+      },
+      {
+        "query": "E17 排查时为何需要检查设备周围散热空间",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 194.86
+      },
+      {
+        "query": "AX-200 未收录告警码按 SOP 要记录哪些信息",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 191.39
+      },
+      {
+        "query": "未知告警码能否由现场人员推断维修步骤",
+        "expected": [
+          "AX-200-故障排查SOP.md"
+        ],
+        "top1Source": "AX-200-故障排查SOP.md",
+        "hit": true,
+        "latencyMs": 184.43
+      },
+      {
+        "query": "AX-200 用户手册规定开机前检查什么",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 181.13
+      },
+      {
+        "query": "AX-200 用户手册的日常巡检要求观察哪些读数",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 215.99
+      },
+      {
+        "query": "AX-200 运行时有异常声音应如何处理",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 201.42
+      },
+      {
+        "query": "AX-200 运行时闻到异常气味应联系谁",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 186.51
+      },
+      {
+        "query": "AX-200 进气滤芯的检查周期是多少运行小时",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 183.95
+      },
+      {
+        "query": "用户手册说滤芯明显积尘时应如何处理",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 187.39
+      },
+      {
+        "query": "AX-200 滤芯维护要记录哪些设备信息",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 190.35
+      },
+      {
+        "query": "AX-200 设备运行时能拆卸进气滤芯吗",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 248.25
+      },
+      {
+        "query": "未断电状态能否拆 AX-200 滤芯",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 193.03
+      },
+      {
+        "query": "AX-200 用户手册是否适用于其他型号",
+        "expected": [
+          "AX-200-用户手册.md"
+        ],
+        "top1Source": "AX-200-用户手册.md",
+        "hit": true,
+        "latencyMs": 216.54
+      },
+      {
+        "query": "DEMO-AX200-001 历史服务记录发生在什么日期",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 188.81
+      },
+      {
+        "query": "编号 DEMO-AX200-001 的设备上次 E17 怎么处理的",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 183.16
+      },
+      {
+        "query": "2026 年 9 月 18 日 E17 服务记录的报修现象是什么",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 180.73
+      },
+      {
+        "query": "DEMO-AX200-001 的右侧散热空间被什么遮挡",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 180.21
+      },
+      {
+        "query": "历史维修记录中清理堆放物后谁做复核",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 178.3
+      },
+      {
+        "query": "服务记录里的试运行是否再次出现 E17",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 161.79
+      },
+      {
+        "query": "DEMO-AX200-001 此次维修有没有更换内部部件",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 182.96
+      },
+      {
+        "query": "历史服务记录对应的设备编号是什么",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 205.09
+      },
+      {
+        "query": "这份 E17 历史服务记录能直接作为所有设备维修规则吗",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 165.15
+      },
+      {
+        "query": "服务记录描述的现场遮挡物清理后发生了什么",
+        "expected": [
+          "AX-200-服务记录.md"
+        ],
+        "top1Source": "AX-200-服务记录.md",
+        "hit": true,
+        "latencyMs": 195.97
+      }
+    ]
+  },
+  "uncachedVariants100": {
+    "requests": 100,
+    "success": 100,
+    "failures": 0,
+    "concurrency": 1,
+    "cache": "100 unique query variants; embedding and retrieval executed",
+    "p50Ms": 185.42,
+    "p95Ms": 214.57
+  },
+  "limitations": [
+    "RepeatSubmit rejects rapid identical requests, so no warm-cache P95 is reported.",
+    "AX-200 corpus and questions are synthetic; these metrics do not estimate production accuracy."
+  ]
+}

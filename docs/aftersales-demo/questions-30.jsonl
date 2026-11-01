@@ -1,0 +1,30 @@
+{"query":"AX-200 故障排查 SOP 中 E17 的处理顺序是什么","expectedSourceNames":["AX-200-故障排查SOP.md"]}
+{"query":"AX-200 的 E17 告警出现后第一步要做什么","expectedSourceNames":["AX-200-故障排查SOP.md"]}
+{"query":"E17 排气温度过高时是否要先切断电源","expectedSourceNames":["AX-200-故障排查SOP.md"]}
+{"query":"E17 故障排查需要记录哪个温度读数","expectedSourceNames":["AX-200-故障排查SOP.md"]}
+{"query":"AX-200 E17 再次出现时 SOP 要求怎样升级处理","expectedSourceNames":["AX-200-故障排查SOP.md"]}
+{"query":"故障排查 SOP 规定 E17 处理时谁可以进行现场复核","expectedSourceNames":["AX-200-故障排查SOP.md"]}
+{"query":"故障排查 SOP 是否直接要求更换 AX-200 内部部件","expectedSourceNames":["AX-200-故障排查SOP.md"]}
+{"query":"E17 排查时为何需要检查设备周围散热空间","expectedSourceNames":["AX-200-故障排查SOP.md"]}
+{"query":"AX-200 未收录告警码按 SOP 要记录哪些信息","expectedSourceNames":["AX-200-故障排查SOP.md"]}
+{"query":"未知告警码能否由现场人员推断维修步骤","expectedSourceNames":["AX-200-故障排查SOP.md"]}
+{"query":"AX-200 用户手册规定开机前检查什么","expectedSourceNames":["AX-200-用户手册.md"]}
+{"query":"AX-200 用户手册的日常巡检要求观察哪些读数","expectedSourceNames":["AX-200-用户手册.md"]}
+{"query":"AX-200 运行时有异常声音应如何处理","expectedSourceNames":["AX-200-用户手册.md"]}
+{"query":"AX-200 运行时闻到异常气味应联系谁","expectedSourceNames":["AX-200-用户手册.md"]}
+{"query":"AX-200 进气滤芯的检查周期是多少运行小时","expectedSourceNames":["AX-200-用户手册.md"]}
+{"query":"用户手册说滤芯明显积尘时应如何处理","expectedSourceNames":["AX-200-用户手册.md"]}
+{"query":"AX-200 滤芯维护要记录哪些设备信息","expectedSourceNames":["AX-200-用户手册.md"]}
+{"query":"AX-200 设备运行时能拆卸进气滤芯吗","expectedSourceNames":["AX-200-用户手册.md"]}
+{"query":"未断电状态能否拆 AX-200 滤芯","expectedSourceNames":["AX-200-用户手册.md"]}
+{"query":"AX-200 用户手册是否适用于其他型号","expectedSourceNames":["AX-200-用户手册.md"]}
+{"query":"DEMO-AX200-001 历史服务记录发生在什么日期","expectedSourceNames":["AX-200-服务记录.md"]}
+{"query":"编号 DEMO-AX200-001 的设备上次 E17 怎么处理的","expectedSourceNames":["AX-200-服务记录.md"]}
+{"query":"2026 年 9 月 18 日 E17 服务记录的报修现象是什么","expectedSourceNames":["AX-200-服务记录.md"]}
+{"query":"DEMO-AX200-001 的右侧散热空间被什么遮挡","expectedSourceNames":["AX-200-服务记录.md"]}
+{"query":"历史维修记录中清理堆放物后谁做复核","expectedSourceNames":["AX-200-服务记录.md"]}
+{"query":"服务记录里的试运行是否再次出现 E17","expectedSourceNames":["AX-200-服务记录.md"]}
+{"query":"DEMO-AX200-001 此次维修有没有更换内部部件","expectedSourceNames":["AX-200-服务记录.md"]}
+{"query":"历史服务记录对应的设备编号是什么","expectedSourceNames":["AX-200-服务记录.md"]}
+{"query":"这份 E17 历史服务记录能直接作为所有设备维修规则吗","expectedSourceNames":["AX-200-服务记录.md"]}
+{"query":"服务记录描述的现场遮挡物清理后发生了什么","expectedSourceNames":["AX-200-服务记录.md"]}
