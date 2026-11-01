@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7f8">
+  <title>设备售后知识台</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="设备售后知识台首页">
+        <span class="brand-mark">A<span>·</span></span>
+        <span><strong>AFTERSALES</strong><small>设备知识工作台</small></span>
+      </a>
+      <div class="side-label">工作空间</div>
+      <nav class="nav" aria-label="主导航">
+        <a href="#overview" data-view="overview" class="active"><span class="nav-no">01</span> 总览</a>
+        <a href="#documents" data-view="documents"><span class="nav-no">02</span> 资料管理</a>
+        <a href="#retrieval" data-view="retrieval"><span class="nav-no">03</span> 检索测试</a>
+        <a href="#ask" data-view="ask"><span class="nav-no">04</span> 溯源问答</a>
+      </nav>
+      <div class="sidebar-foot"><span class="status-dot"></span><span id="session-label">尚未登录</span></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><span class="eyebrow">ENTERPRISE SUPPORT / RAG</span><h1 id="page-title">工作台总览</h1></div>
+        <div class="top-actions"><span class="top-date" id="today"></span><button type="button" class="button subtle" id="logout" hidden>退出登录</button></div>
+      </header>
+      <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+
+      <section id="login-panel" class="login-panel card">
+        <div class="login-copy"><span class="eyebrow">SECURE ACCESS</span><h2>先登录，再查看知识依据。</h2><p>使用系统账号进入售后工作台。权限由后端 Sa-Token 校验。</p></div>
+        <form id="login-form" class="login-fields">
+          <label>用户名<input id="username" name="username" autocomplete="username" required value="admin"></label>
+          <label>密码<input id="password" name="password" type="password" autocomplete="current-password" required></label>
+          <button class="button primary" type="submit">登录工作台 <span aria-hidden="true">↗</span></button>
+        </form>
+      </section>
+
+      <div id="workspace" hidden>
+        <div class="context-bar card">
+          <div><span class="field-caption">当前知识库</span><select id="knowledge-select" aria-label="选择知识库"><option value="">选择知识库</option></select></div>
+          <label class="id-entry"><span class="field-caption">或输入知识库 ID</span><input id="knowledge-id" inputmode="numeric" pattern="[0-9]+" value="2091000000000000100" aria-label="知识库 ID"></label>
+          <button id="refresh-knowledge" class="button outline" type="button">刷新列表</button>
+        </div>
+
+        <section id="view-overview" class="view active" aria-labelledby="overview-title">
+          <div class="hero card"><div><span class="eyebrow">KNOWLEDGE OPERATIONS</span><h2 id="overview-title">从资料到可核对的答案</h2><p>集中管理售后资料，先检索原文，再生成带来源的回答。</p><a class="button primary" href="#ask">开始提问 <span aria-hidden="true">↗</span></a></div><div class="hero-graphic" aria-hidden="true"><span>01 <b>资料</b></span><i></i><span>02 <b>检索</b></span><i></i><span>03 <b>问答</b></span></div></div>
+          <div class="section-heading"><div><span class="eyebrow">LIBRARIES</span><h3>知识库</h3></div><span id="knowledge-total" class="muted">—</span></div>
+          <div class="overview-grid"><div class="card list-card"><div id="knowledge-list" class="knowledge-list empty">登录后加载知识库。</div></div><div class="card form-card"><div class="card-title"><span class="eyebrow">NEW LIBRARY</span><h3>新建知识库</h3></div><form id="create-form" class="stack-form"><label>知识库名称<input name="name" required maxlength="80" placeholder="例如：AX-200 售后知识库"></label><label>描述<input name="description" maxlength="200" placeholder="资料范围与适用设备"></label><div class="form-row"><label>向量库<select name="vectorModel"><option value="weaviate">Weaviate</option><option value="milvus">Milvus</option><option value="qdrant">Qdrant</option></select></label><label>Embedding 模型<input name="embeddingModel" required value="qwen3-vl-embedding"></label></div><button class="button dark" type="submit">创建知识库</button></form></div></div>
+        </section>
+
+        <section id="view-documents" class="view" aria-labelledby="documents-title">
+          <div class="section-heading page-heading"><div><span class="eyebrow">DOCUMENT PIPELINE</span><h2 id="documents-title">资料管理</h2><p>上传手册、SOP 或维修记录，并查看解析状态。</p></div><button class="button outline" id="refresh-documents" type="button">刷新状态</button></div>
+          <div class="card upload-card"><div><span class="eyebrow">ADD DOCUMENT</span><h3>添加资料</h3><p>支持后端已配置的 PDF、Word、Excel 和 Markdown 解析器。上传依赖对象存储配置。</p></div><form id="upload-form"><label class="file-pick"><input id="upload-file" name="file" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.md,.markdown" required><span id="file-name">选择文件或拖入资料</span><small>PDF · DOCX · XLSX · MD</small></label><label class="checkbox"><input name="autoParse" type="checkbox" checked> 上传后自动解析</label><button class="button primary" type="submit">上传资料</button></form></div>
+          <div class="section-heading"><div><span class="eyebrow">DOCUMENTS</span><h3>附件与解析状态</h3></div><span id="document-total" class="muted">—</span></div>
+          <div class="card table-card"><div class="table-scroll"><table><thead><tr><th>资料名称</th><th>类型</th><th>解析状态</th><th>片段数</th><th>上传时间</th><th>操作</th></tr></thead><tbody id="document-rows"><tr><td colspan="6" class="table-empty">选择知识库后加载资料。</td></tr></tbody></table></div></div>
+        </section>
+
+        <section id="view-retrieval" class="view" aria-labelledby="retrieval-title"><div class="section-heading page-heading"><div><span class="eyebrow">SEARCH LAB</span><h2 id="retrieval-title">检索测试</h2><p>直接查看命中的片段、来源、排序与分数。</p></div></div><div class="card query-card"><form id="retrieval-form" class="query-form"><label>检索问题<textarea name="query" rows="3" required placeholder="例如：AX-200 出现 E17 后，应该先检查什么？"></textarea></label><div class="query-options"><label>返回片段数<input name="topK" type="number" min="1" max="20" value="5"></label><label class="checkbox"><input name="enableHybrid" type="checkbox" checked> 混合检索</label><button class="button dark" type="submit">开始检索 <span aria-hidden="true">↗</span></button></div></form></div><div class="section-heading result-heading"><div><span class="eyebrow">MATCHED EVIDENCE</span><h3>命中片段</h3></div><span id="retrieval-count" class="muted">尚未检索</span></div><div id="retrieval-results" class="result-list"></div></section>
+
+        <section id="view-ask" class="view" aria-labelledby="ask-title"><div class="section-heading page-heading"><div><span class="eyebrow">SOURCE-GROUNDED ANSWERS</span><h2 id="ask-title">溯源问答</h2><p>回答会附上检索来源；维修建议仍应由售后工程师核对原文。</p></div></div><div class="suggestions"><button type="button" data-question="AX-200 出现 E17 后怎么办">E17 故障怎么处理？</button><button type="button" data-question="AX-200 用户手册规定进气滤芯多久检查一次">滤芯多久检查？</button><button type="button" data-question="AX-200 的 DEMO-AX200-001 上次 E17 怎么处理的，这能用于所有设备吗">历史维修能否通用？</button><button type="button" data-question="AX-200 出现 E42 后怎么办">未收录告警码</button></div><div class="card ask-card"><form id="ask-form"><label>你的问题<textarea name="question" rows="4" required placeholder="输入设备型号、告警码和故障现象…"></textarea></label><div class="ask-actions"><span>答案由模型生成，请核对下方资料片段。</span><button class="button primary" type="submit">生成回答 <span aria-hidden="true">↗</span></button></div></form></div><div id="answer-area" hidden><div class="section-heading result-heading"><div><span class="eyebrow">ANSWER</span><h3>回答与依据</h3></div><span id="answer-status" class="status-pill"></span></div><article class="card answer-card"><div id="answer-text" class="answer-text"></div><div id="answer-model" class="muted"></div></article><div class="section-heading"><div><span class="eyebrow">SOURCES</span><h3>引用资料</h3></div><span id="source-count" class="muted"></span></div><div id="source-results" class="result-list"></div></div></section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

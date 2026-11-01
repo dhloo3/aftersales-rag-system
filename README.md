@@ -1,6 +1,6 @@
 # 企业设备售后知识检索与溯源问答系统
 
-基于 [RuoYi AI](https://github.com/ageerle/ruoyi-ai) 的后端二次开发，面向设备手册、故障排查 SOP 和历史维修记录的检索与问答。项目是 Java 多模块应用；本仓库只提供后端，不包含原项目的 Vue 前端。
+基于 [RuoYi AI](https://github.com/ageerle/ruoyi-ai) 的后端二次开发，面向设备手册、故障排查 SOP 和历史维修记录的检索与问答。项目是 Java 多模块应用，包含随 Spring Boot 一起运行的售后工作台前端。页面专注售后场景，不包含上游独立的 Vue 管理端。
 
 ## 功能与代码
 
@@ -11,12 +11,13 @@
 | MySQL 全文检索、向量检索、RRF 融合及可选重排 | `KnowledgeRetrievalServiceImpl`、`VectorStoreStrategyFactory` |
 | 售后问答与来源片段返回 | `AftersalesQaController`，`POST /system/aftersales/ask` |
 | 登录态、权限、基础系统数据 | `app`、`modules/system`、`common` |
+| 售后工作台前端 | `app/src/main/resources/static/aftersales` |
 
 向量存储策略支持 Weaviate、Milvus、Qdrant；下面的本地演示使用 Weaviate。售后 `/ask` 是同步 JSON 接口，返回回答、文档名、文档 ID、片段 ID 和分数。通用聊天的 SSE 能力来自基础平台，不能把售后 `/ask` 描述为 SSE 接口。售后接口尚未实现逐句引文校验或完整的专属链路追踪。
 
 ## 目录
 
-- `app`：Spring Boot 启动模块及配置。
+- `app`：Spring Boot 启动模块、配置及售后工作台页面。
 - `modules/rag`：知识库、检索、模型调用和售后问答。
 - `modules/system`：用户、角色、权限和系统管理。
 - `common`：上述模块使用的公共组件。
@@ -46,6 +47,8 @@ python scripts/configure_aftersales_models.py
 python scripts/seed_aftersales_knowledge.py
 python scripts/evaluate_aftersales_qa.py
 ```
+
+启动后打开 `http://127.0.0.1:6039/aftersales/index.html`，登录后可管理知识库、上传资料、查看解析状态、测试检索并进行溯源问答。
 
 本地服务默认使用 `127.0.0.1`：后端 `6039`、MySQL `3306`、Redis `6379`、Weaviate `28080`、MinIO API `9000`、MinIO 控制台 `9090`。Docker Compose 使用演示密码，远程或生产环境需自行更换，并配置 `MYSQL_PASSWORD`、`MINIO_PASSWORD`、`SA_TOKEN_JWT_SECRET` 等环境变量。已有数据库需要运行 `docs/script/sql/update/2026-10-15-knowledge-attach-lookup.sql`；全新数据库由 Compose 导入 `ruoyi-ai.sql`。
 
