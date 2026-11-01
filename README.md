@@ -1,6 +1,6 @@
 # 企业设备售后知识检索与溯源问答系统
 
-基于 [RuoYi AI](https://github.com/ageerle/ruoyi-ai) 的后端二次开发，面向设备手册、故障排查 SOP 和历史维修记录的检索与问答。项目是 Java 多模块应用，包含随 Spring Boot 一起运行的售后工作台前端。页面专注售后场景，不包含上游独立的 Vue 管理端。
+基于 [RuoYi AI](https://github.com/ageerle/ruoyi-ai) 的后端二次开发，面向设备手册、故障排查 SOP 和历史维修记录的检索与问答。项目是 Java 多模块应用，包含随 Spring Boot 一起运行的售后工作台前端。页面专注售后场景。
 
 ## 功能与代码
 
@@ -13,9 +13,7 @@
 | 登录态、权限、基础系统数据 | `app`、`modules/system`、`common` |
 | 售后工作台前端 | `app/src/main/resources/static/aftersales` |
 
-向量存储策略支持 Weaviate、Milvus、Qdrant；下面的本地演示使用 Weaviate。售后 `/ask` 是同步 JSON 接口，返回回答、文档名、文档 ID、片段 ID 和分数。通用聊天的 SSE 能力来自基础平台，不能把售后 `/ask` 描述为 SSE 接口。售后接口尚未实现逐句引文校验或完整的专属链路追踪。
-
-## 目录
+向量存储策略支持 Weaviate、Milvus、Qdrant；本地演示使用 Weaviate。售后 `/ask` 是同步 JSON 接口，返回回答、文档名、文档 ID、片段 ID 和分数。通用聊天的 SSE 能力来自基础平台。
 
 - `app`：Spring Boot 启动模块、配置及售后工作台页面。
 - `modules/rag`：知识库、检索、模型调用和售后问答。
@@ -62,23 +60,3 @@ Invoke-RestMethod -Uri 'http://127.0.0.1:6039/system/aftersales/ask' -Method Pos
 
 没有 API Key 时，MySQL、Redis、Weaviate 等依赖仍可启动；真实 Embedding 装载和模型回答需要对应的 API Key。`scripts/seed_aftersales_knowledge.py` 直接装载演示语料，不经过 MinIO 上传与异步解析；后两项尚未完成本次端到端实测。
 
-## 复测结果与边界
-
-2026-10-15 的记录位于 `docs/aftersales-demo`：3 份虚构 AX-200 文档、3 个片段，30 题文档级 Recall@1 为 30/30；100 条不同请求、单并发检索 P95 为 214.57 ms，包含 Embedding 与检索，不包含 DeepSeek 生成。4 道问答只通过固定状态、来源和关键词规则检查。这些结果不代表生产准确率或高并发性能。
-
-## 项目来源
-
-本项目基于 RuoYi AI v3.1.0 的后端代码改造，保留原项目 [MIT License](LICENSE)。基础平台提供 Sa-Token 登录与权限、文档解析、向量库策略、通用聊天 SSE 等能力；本仓库围绕售后场景增加问答入口、混合检索的资源边界与失败处理、样例资料和复测脚本。具体个人贡献应以实际开发经历为准。
-
-## 上传到 GitHub
-
-1. 登录 GitHub，在 [新建仓库](https://github.com/new) 页面创建空仓库，建议名称 `aftersales-rag-system`。不要勾选自动创建 README、`.gitignore` 或许可证；本地仓库已经包含这些文件。
-2. 在本目录打开 PowerShell，执行以下命令，把 `<你的用户名>` 换成自己的 GitHub 用户名：
-
-```powershell
-cd 'E:\实习\aftersales-rag-system'
-git remote add origin https://github.com/<你的用户名>/aftersales-rag-system.git
-git push -u origin main
-```
-
-如果 Git 提示登录，按浏览器窗口完成 GitHub 授权。以后修改代码后使用 `git add .`、`git commit -m "说明本次修改"` 和 `git push`。不要把 `.env.local`、数据库数据或 API Key 提交到仓库。
